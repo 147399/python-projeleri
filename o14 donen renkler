@@ -1,0 +1,37 @@
+from turtle import *       # we add libary
+import colorsys
+speed(9999)              # kmbaga hızı 
+hideturtle()             #kaplumbagıyı gızlreme 
+bgcolor('black')         # arka plan rengi  
+tracer(5)                # anımasyon kare sayısı 
+width(2)                 #cızgı  genıslıgını ayrlar 
+h=0.0001                 # Renk tonunu başlangıç değeri ol arak ayarlar
+for i in range(9000000): # belırlı sayıda ıterasyon yapar  
+    color(colorsys.hsv_to_rgb(h,1,1)) 
+      
+    left(60)  #sekıllerı  cızer 
+    forward(100)
+    right(120)
+    circle(50)
+    left(240)
+    forward(100)
+    left(60)
+    forward(100)
+    h += 0.02   #renk tonu ayarlama
+
+    color(colorsys.hsv_to_rgb(h,1,1))   #dıger dongudekı renk  degisimini ayarlar 
+
+    forward(100)   # sekıl cızımı
+    right(60)
+    forward(100)
+    left(120)
+    circle(-50)
+    right(240)
+    forward(100)
+    right(60)
+    forward(100)
+    left(2)
+    h +=0.002    # renk ayarı yaptık
+done()    # yaptıktan sonra bıtırmesını engeller  
+
+    
