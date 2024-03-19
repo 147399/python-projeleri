@@ -1,31 +1,30 @@
-import turtle
-from random import randint
+import turtle  # turtle modülünü içe aktarır
+from random import randint  # randint fonksiyonunu içe aktarır
 
-t = turtle.Turtle()
+t = turtle.Turtle()  # turtle için bir nesne oluşturur
 
+maxy = 500  # maksimum y koordinatı
+maxx = 500  # maksimum x koordinatı
 
-maxy = 500
-maxx= 500
+t.reset()  # turtle'ı sıfırlar
+t.speed(0)  # turtle'ın çizim hızını ayarlar
+turtle.colormode(255)  # renk modunu RGB değerleriyle ayarlar
 
-t.reset
-t.speed(0)
-turtle.colormode(255)
+for i in range(1000):  # 1000 kere döngüye girer
+    ycap = randint(10, 100)  # yarıçapı rastgele belirler
+    y = randint(-maxy, maxy)  # y koordinatını rastgele belirler
+    x = randint(-maxx, maxx)  # x koordinatını rastgele belirler
+    r = randint(0, 255)  # kırmızı bileşeni rastgele belirler
+    g = randint(0, 255)  # yeşil bileşeni rastgele belirler
+    b = randint(0, 255)  # mavi bileşeni rastgele belirler
+    renk = (r, g, b)  # rastgele renk oluşturur
+    t.penup()  # kalem kaldırır
+    t.goto(x, y)  # belirlenen koordinatlara gider
+    t.pendown()  # kalem iner
+    t.color((0, 0, 0), renk)  # çizgi ve dolgu rengini belirler
+    t.begin_fill()  # dolgu alanı çizimini başlatır
+    t.circle(ycap)  # belirlenen yarıçapta bir daire çizer
+    t.end_fill()  # dolgu alanı çizimini sonlandırır
 
-for i in range(1000):
-    ycap= randint(10,100)
-    y = randint(-maxy,maxy)
-    x = randint(-maxx,maxx)
-    r = randint(0,255)
-    g = randint(0,255)
-    b = randint(0,255)
-    renk = (r,g,b)
-    t.penup()
-    t.goto(x,y)
-    t.pendown()
-    t.color((0,0,0), renk)
-    t.begin_fill()
-    t.circle(ycap)
-    t.end_fill()
-
-t.hideturtle()
-turtle.mainloop()
+t.hideturtle()  # turtle'ı gizler
+turtle.mainloop()  # ana döngüyü başlatır ve pencereyi açık tutar
